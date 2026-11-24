@@ -1,0 +1,38 @@
+# Ordered safety blockers precede working and anchored empty prompts.
+
+[[rule]]
+name = "opencode.account"
+state = "blocked"
+blocked_kind = "account"
+pattern = '(?i)(sign in to|please log in|not logged in|authentication required)'
+
+[[rule]]
+name = "opencode.quota"
+state = "blocked"
+blocked_kind = "quota"
+pattern = '(?i)(usage limit|rate limit reached|quota exceeded|you.ve hit your limit)'
+
+[[rule]]
+name = "opencode.approval"
+state = "blocked"
+blocked_kind = "approval"
+interactive_ready = true
+pattern = '(?i)(^\s*Allow\b|approval required|Do you trust|trust this (folder|workspace)|allow this (command|tool)|permission required)'
+
+[[rule]]
+name = "opencode.question"
+state = "blocked"
+blocked_kind = "question"
+interactive_ready = true
+pattern = '(?i)(\(y/n\)|^\s*[1-9][.)]\s+|question for you:)'
+
+[[rule]]
+name = "opencode.working"
+state = "working"
+pattern = '(?i)(esc to interrupt|^\s*Generating\.\.\.)'
+
+[[rule]]
+name = "opencode.idle"
+state = "idle"
+interactive_ready = true
+pattern = '^\s*[❯>]\s*$'

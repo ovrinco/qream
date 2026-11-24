@@ -1,0 +1,50 @@
+# Marker exemplars supplied by chief in followups/T04-gap.md, 2026-10-10.
+# verified records supplied live observation, not a session started by this worker.
+# Codex 0.162 keeps a JavaScript REPL and its bundled plugins (computer use) running for the whole session; they are
+# never a running job (QF-2026-10-11-REPAIR-06). An entry matches a process name or a part of its command line.
+resident = ["node_repl", "/.codex/plugins/", "/usr/lib/chatgpt/resources/", "codex-code-mode-host"]
+[[rule]]
+name = "codex.account"
+state = "blocked"
+blocked_kind = "account"
+verified = true
+pattern = '(?i)(Your access token could not be refreshed|Please sign in again)'
+
+[[rule]]
+name = "codex.quota"
+state = "blocked"
+blocked_kind = "quota"
+verified = true
+pattern = '(?i)(You’ve hit your usage limit|hit your usage limit)'
+
+[[rule]]
+name = "codex.approval"
+state = "blocked"
+blocked_kind = "approval"
+interactive_ready = true
+verified = true
+multiline = true
+pattern = '(?i)\bAllow\b'
+requires = ['(?i)\besc\b', '(?m)(\(y/n\)|^\s*[1-9][.)]\s+)']
+
+[[rule]]
+name = "codex.question"
+state = "blocked"
+blocked_kind = "question"
+interactive_ready = true
+verified = true
+multiline = true
+pattern = '(?ms)^\s*[1-9][.)]\s+[^\n]+\n(?:[^\n]*\n)*\s*› Ask Codex to do anything[^\n]*\s*\z'
+
+[[rule]]
+name = "codex.working"
+state = "working"
+verified = true
+pattern = '^\s*• Working \([^\n]*esc to interrupt[^\n]*$'
+
+[[rule]]
+name = "codex.idle"
+state = "idle"
+interactive_ready = true
+verified = true
+pattern = '^\s*› Ask Codex to do anything[^\n]*$'

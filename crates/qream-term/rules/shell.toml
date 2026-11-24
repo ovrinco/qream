@@ -1,0 +1,8 @@
+# A scripted pane: it shows `qream-shell> ` when it waits for a line, and any child it
+# runs is its tool. Written for the probe's own script; nothing else prints the marker.
+[[rule]]
+name = "shell.idle"
+state = "idle"
+interactive_ready = true
+verified = true
+pattern = '^qream-shell>\s*$'

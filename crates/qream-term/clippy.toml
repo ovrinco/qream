@@ -1,0 +1,1 @@
+disallowed-methods = [{ path = "std::thread::sleep", reason = "Only the pane writer actor may pace input; never sleep under the sessions lock." }]

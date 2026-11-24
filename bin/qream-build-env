@@ -1,0 +1,4 @@
+# Source this from the repository root with a supported Rust toolchain on PATH.
+export QREAM_SRC="$(pwd)"
+export CARGO_TARGET_DIR="${CARGO_TARGET_DIR:-$QREAM_SRC/target}"
+qream_low() { "$@"; }

@@ -1,0 +1,28 @@
+[package]
+license = "Apache-2.0"
+name = "qream-engine"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.94"
+publish = false
+
+[dependencies]
+tracker-store = { path = "../tracker-store" }
+qream-term = { path = "../qream-term" }
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.151"
+thiserror = "=2.0.19"
+chrono = { version = "=0.4.45", features = ["clock", "serde"] }
+tokio = { version = "=1.53.3", features = ["rt-multi-thread", "net", "io-util", "process", "sync", "time", "signal", "fs"] }
+regex = "=1.12.3"
+toml = "=1.0.6"
+rusqlite = { version = "=0.41.0", features = ["bundled", "fallible_uint"] }
+sha2 = { version = "=0.11.0", default-features = false }
+parking_lot = "=0.12.5"
+nix = { version = "=0.31.3", features = ["process", "signal"] }
+
+[dev-dependencies]
+tempfile = "=3.27.0"
+
+[lints.rust]
+unsafe_code = "forbid"

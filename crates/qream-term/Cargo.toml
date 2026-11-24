@@ -1,0 +1,31 @@
+[package]
+license = "Apache-2.0"
+name = "qream-term"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.94"
+publish = false
+
+[dependencies]
+portable-pty = "=0.9.0"
+vt100 = "=0.16.2"
+parking_lot = "=0.12.5"
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.151"
+thiserror = "=2.0.19"
+chrono = { version = "=0.4.45", features = ["clock", "serde"] }
+toml = "=1.0.6"
+regex = "=1.12.3"
+tokio = { version = "=1.53.3", features = ["sync"] }
+
+[dev-dependencies]
+tempfile = "=3.27.0"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+await_holding_lock = "deny"
+let_underscore_lock = "deny"
+# Integration test crates may sleep; the library denies this lint outside cfg(test).
+disallowed_methods = "allow"

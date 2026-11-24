@@ -1,0 +1,305 @@
+version = 1
+
+[[rules]]
+id = "L01"
+severity = "BLOCKING"
+text = "Required directive section missing"
+check = "sections"
+
+[[rules]]
+id = "L02"
+severity = "BLOCKING"
+text = "Acceptance has fewer than three numbered items"
+check = "acceptance_count"
+
+[[rules]]
+id = "L03"
+severity = "NOTE"
+text = "Acceptance item lacks executable observation"
+check = "acceptance_observable"
+
+[[rules]]
+id = "L04"
+severity = "BLOCKING"
+text = "Writable scope names no path"
+check = "scope"
+
+[[rules]]
+id = "L05"
+severity = "BLOCKING"
+text = "Seal command missing or task id differs"
+check = "seal"
+
+[[rules]]
+id = "L06"
+severity = "BLOCKING"
+text = "Stop and go idle line missing"
+check = "stop"
+
+[[rules]]
+id = "L07"
+severity = "NOTE"
+text = "Named report path missing"
+check = "report"
+
+[[rules]]
+id = "L08"
+severity = "BLOCKING"
+text = "Soliton work outside its own campaign"
+check = "soliton"
+
+[[rules]]
+id = "L09"
+severity = "BLOCKING"
+text = "Model or model-server start instruction"
+check = "model_start"
+
+[[rules]]
+id = "L10"
+severity = "BLOCKING"
+text = "Destructive command or deletion of non-private session"
+check = "delete"
+
+[[rules]]
+id = "L11"
+severity = "NOTE"
+text = "Dummy content displayed in a graphical interface; blocking with render/display/show"
+check = "dummy"
+
+[[rules]]
+id = "L12"
+severity = "BLOCKING"
+text = "Sub-agent instruction or write outside declared task roots"
+check = "write_scope"
+
+[[rules]]
+id = "L13"
+severity = "BLOCKING"
+text = "Bare Opus launch instruction"
+check = "opus"
+
+[[rules]]
+id = "L14"
+severity = "NOTE"
+text = "Polling instruction"
+check = "poll"
+
+[[rules]]
+id = "L15"
+severity = "NOTE"
+text = "Directive exceeds size limits; blocking above 250 lines or 24 KiB"
+check = "size"
+
+[[rules]]
+id = "L16"
+severity = "NOTE"
+text = "More than eight work items"
+check = "work_count_note"
+
+[[rules]]
+id = "L17"
+severity = "NOTE"
+text = "Haiku launch instruction"
+check = "haiku"
+
+[[rules]]
+id = "L18"
+severity = "BLOCKING"
+text = "Mutation of a live session"
+check = "live_session"
+
+[[rules]]
+id = "L19"
+severity = "NOTE"
+text = "Installed-release path in writable scope"
+check = "installed"
+
+[[rules]]
+id = "L20"
+severity = "BLOCKING"
+text = "Duplicate writable path or malformed manifest references"
+check = "ownership"
+
+[[rules]]
+id = "L21"
+severity = "BLOCKING"
+text = "Task belongs to zero or multiple departments"
+check = "departments"
+
+[[rules]]
+id = "L22"
+severity = "BLOCKING"
+text = "Charter task absent from manifest"
+check = "charter_tasks"
+
+[[rules]]
+id = "L23"
+severity = "BLOCKING"
+text = "Unsupported harness route or frozen model/effort arguments"
+check = "route"
+
+[[rules]]
+id = "L24"
+severity = "BLOCKING"
+text = "Manifest width, departments or charter hash mismatch"
+check = "width"
+
+[[rules]]
+id = "L25"
+severity = "BLOCKING"
+text = "Writable directory prefixes overlap"
+check = "prefix"
+
+[[rules]]
+id = "L26"
+severity = "NOTE"
+text = "Reserved legacy id; no matcher is defined by the skill"
+check = "reserved"
+
+[[rules]]
+id = "L27"
+severity = "BLOCKING"
+text = "Outcome identifier and result line missing"
+check = "outcome"
+
+[[rules]]
+id = "L28"
+severity = "BLOCKING"
+text = "Served rows or carried row blocks missing"
+check = "served"
+
+[[rules]]
+id = "L29"
+severity = "BLOCKING"
+text = "Carried row text differs from tracker"
+check = "row_text"
+
+[[rules]]
+id = "L30"
+severity = "BLOCKING"
+text = "Served row is thin"
+check = "row_thin"
+
+[[rules]]
+id = "L31"
+severity = "BLOCKING"
+text = "Directive states scope exclusions"
+check = "exclusion"
+
+[[rules]]
+id = "L32"
+severity = "BLOCKING"
+text = "More than five work items"
+check = "work_count"
+
+[[rules]]
+id = "R1"
+severity = "BLOCKING"
+text = "Every served row exists in the tracker"
+check = "served"
+
+[[rules]]
+id = "R2"
+severity = "BLOCKING"
+text = "Served purpose and definition of done appear word for word"
+check = "row_text"
+
+[[rules]]
+id = "R3"
+severity = "BLOCKING"
+text = "No exclusion statements outside fixed lines or Rows"
+check = "exclusion"
+
+[[rules]]
+id = "R4"
+severity = "BLOCKING"
+text = "Purpose has forty characters and definition of done exists"
+check = "row_thin"
+
+[[rules]]
+id = "R5"
+severity = "BLOCKING"
+text = "Picked rows served or deferred; served rows picked"
+check = "coverage"
+
+[[rules]]
+id = "O1"
+severity = "BLOCKING"
+text = "Campaign has OUTCOME.md"
+check = "charter"
+
+[[rules]]
+id = "O2"
+severity = "BLOCKING"
+text = "Directive outcome and result lines exist in charter"
+check = "outcome_reference"
+
+[[rules]]
+id = "O3"
+severity = "BLOCKING"
+text = "Interface paths and manifest harness comply"
+check = "interface_route"
+
+[[rules]]
+id = "O4"
+severity = "BLOCKING"
+text = "Authored graphical files display no developer notes or home paths"
+check = "interface_text"
+
+[[rules]]
+id = "O5"
+severity = "BLOCKING"
+text = "Codex task owns no new interface files"
+check = "interface_ownership"
+
+[[rules]]
+id = "O6"
+severity = "NOTE"
+text = "Directive names operator source; blocking for graphical work"
+check = "source"
+
+[[rules]]
+id = "O7"
+severity = "BLOCKING"
+text = "Constitution writes or changed constitution files refused"
+check = "constitution"
+
+[[rules]]
+id = "O8"
+severity = "BLOCKING"
+text = "Manifest model and effort agree with explicit lane data; history noted"
+check = "lanes"
+
+[[rules]]
+id = "O9"
+severity = "BLOCKING"
+text = "More than five work items; more than eight served rows noted"
+check = "work_count"
+
+[[rules]]
+id = "X01"
+severity = "NOTE"
+text = "large read named: the directive needs the read limits of template section 3 (digested source first, cap on raw files, offset and limit over 500 lines)"
+check = "pattern"
+pattern = "(?i)all sessions|every session|full corpus|all logs"
+
+[[rules]]
+id = "X02"
+severity = "NOTE"
+text = "a directive names 00_constitution: the outcome check's rule O7 decides whether it may write there"
+check = "pattern"
+pattern = "00_constitution"
+
+[[rules]]
+id = "X03"
+severity = "BLOCKING"
+text = "a line labelled as what is not covered: say only what is in scope, with guardrails and definitions of done (his correction of 9 October; outcome check R3 and lint L31 judge the rest)"
+check = "pattern"
+pattern = "(?i)^\\s*[-*]?\\s*(boundaries|boundary|not in (the )?scope|out of (the )?scope|not (in|part of) this campaign)\\s*(\\(|:)"
+
+[[rules]]
+id = "X04"
+severity = "BLOCKING"
+text = "an empty `Serves rows:` line: every directive serves at least one tracker row, carried in full in its Rows section (R1)"
+check = "pattern"
+pattern = "(?i)^serves rows:\\s*$"

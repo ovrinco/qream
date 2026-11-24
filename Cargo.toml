@@ -1,0 +1,33 @@
+[workspace]
+members = [
+    "crates/tracker-store",
+    "crates/qream-term",
+    "crates/qream-engine",
+    "crates/qream-install",
+]
+resolver = "2"
+
+[package]
+license = "Apache-2.0"
+name = "qream"
+version = "0.4.0"
+edition = "2021"
+rust-version = "1.94"
+publish = false
+
+[dependencies]
+qream-engine = { path = "crates/qream-engine" }
+qream-install = { path = "crates/qream-install" }
+anyhow = "=1.0.103"
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.151"
+thiserror = "=2.0.19"
+clap = { version = "=4.6.5", features = ["derive"] }
+sha2 = { version = "=0.11.0", default-features = false }
+
+[dev-dependencies]
+tempfile = "=3.27.0"
+chrono = { version = "=0.4.45", features = ["clock", "serde"] }
+
+[lints.rust]
+unsafe_code = "forbid"

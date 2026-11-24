@@ -1,0 +1,55 @@
+# Claude Code screen rules. Idle, working and the footer verified on the live panes of probe-rebuild-b
+# (10 Oct 2026, T27); the screens are fixtures in tests/fixtures. Order matters: the first match wins.
+[[rule]]
+name = "claude.trust"
+state = "blocked"
+blocked_kind = "approval"
+interactive_ready = true
+verified = false
+pattern = 'Yes, I trust this folder'
+
+[[rule]]
+name = "claude.account"
+state = "blocked"
+blocked_kind = "account"
+verified = false
+pattern = '(?i)(please run /login|not logged in|sign in to continue|log in to continue)'
+
+[[rule]]
+name = "claude.quota"
+state = "blocked"
+blocked_kind = "quota"
+verified = false
+pattern = '(?i)usage limit'
+
+[[rule]]
+name = "claude.approval"
+state = "blocked"
+blocked_kind = "approval"
+interactive_ready = true
+verified = false
+pattern = '(Do you want to proceed\?|Esc to cancel)'
+
+[[rule]]
+name = "claude.working"
+state = "working"
+verified = true
+pattern = 'esc to interrupt'
+
+[[rule]]
+name = "claude.question"
+state = "blocked"
+blocked_kind = "question"
+interactive_ready = true
+verified = false
+multiline = true
+pattern = '(?m)^\s*[^\n]*\?\s*\n(?:[^\n]*\n)*?\s*[1-9][.)]\s+'
+
+[[rule]]
+name = "claude.idle"
+state = "idle"
+interactive_ready = true
+verified = true
+multiline = true
+pattern = '(?m)^\s*❯[^\n]*$'
+requires = ['⏵⏵ (auto mode on|bypass permissions on|accept edits on)']
